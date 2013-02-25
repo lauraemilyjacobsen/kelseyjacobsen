@@ -1,0 +1,55 @@
+
+<div id="top_border"></div>
+
+
+
+<div id="main">
+  <h1>Kelsey Jacobsen</h1>
+  
+  <div id="categories">
+    <% for category in @categories %> 
+      <%= link_to_remote "#{category.name}", :update => 'thumbnails',
+        :url => { :controller => 'categories', :action => 'show', :id => category.id },
+        :html => { :class => 'category' },
+        :loading => "RedBox.showLoading();",
+        :complete => "RedBox.hideLoading();"
+    %>
+    <% end %>
+  </div>
+  
+  <div id="thumbnails">
+    <% if @picture %>
+      <%= image_tag @picture.public_filename(:large) %>
+    <% end %>
+    <div class="clearer"></div>
+  </div>
+</div>
+
+<div id="right_sidebar">
+  <div id="about">
+    <p class="about">
+      Welcome to Kelsey Jacobsen's web gallery!
+    </p>
+    <p class="blurb">
+      
+      I composed most of the works displayed here during college for the minor in art.
+      As you will notice, I work mostly with graphite pencils; however color and ink 
+      also make appearances in this portfolio and I hope to integrate them further in 
+      the future. Marine life is another common theme, owing to my seaside hometown 
+      and longtime interest in the ocean. The miniature, a drawing form which was 
+      introduced to me by a college professor, has particularly caught my interest. 
+      I have continued to experiment with this style after graduation for pleasure 
+      and commission. Indeed, requests for works on commission are always welcome.
+      Please contact me at <span id="contact"></span>.
+    </p>
+    <p class="blurb">
+      Thank you for visiting my gallery, and please enjoy!
+      
+    </p>
+  </div>
+</div>
+<div class="clearer"></div>
+<div id="footer"></div>
+
+
+

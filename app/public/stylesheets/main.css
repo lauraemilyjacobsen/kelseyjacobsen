@@ -1,0 +1,342 @@
+/* layout
+----------------------------------------------- */
+
+* {
+  margin: 0;
+  padding:0;
+}
+
+html {
+    position: absolute;
+    top: auto; bottom: auto; right:auto; left:auto;
+}
+
+body {
+    background-color: #111111;
+    color: #eeeeee;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+a {
+  color: #B0CC0A;  
+}
+
+#top_border {
+    background-color: #B0CC0A;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+#main {
+    position: absolute;
+    top: 40px;
+    left: 200px;
+    width: 600px;
+}
+
+#main h1 {
+    padding: 10px 0 10px 0;
+    margin: 0;
+    height: 30px;
+}
+
+#categories {
+    width: 100px;
+    float: left;
+    padding: 20px 0 0 0;
+}
+
+#thumbnails {
+   float: left;
+   width: 460px;
+   padding: 20px;
+}
+
+#right_sidebar {
+    margin: 40px 10px 10px 800px;
+    padding-top: 70px;
+    width: 350px;
+    font-size: 90%;
+}
+
+.clearer {
+    clear: both;
+}
+
+/* categories sidebar
+----------------------------------------------------- */
+a.category {
+    background-color: #333333;
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    margin: 1px 0 1px 0;
+    line-height: 150%;
+    padding: 5px;
+}
+
+a.category:hover {
+    background-color: #394203;
+    color: #ffffff;
+}
+
+/* thumbnails
+  ---------------------------------------------------- */
+.thumbnail {
+    float: left;
+    margin: 10px;
+    height: 150px;
+}
+
+img {
+    border: none;
+}
+
+.thumbnail a {
+    font-size: 80%;
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+.thumbnail a:hover {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+/* right sidebar
+----------------------------------------------------- */
+p.about {
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 110%;
+    color: #dddddd;
+}
+
+/* blurb
+-------------------------------------------------------*/
+p.blurb {
+    margin: 8px 0 8px 0;
+}
+
+.blurb a {
+    color: #B0CC0A;
+}
+
+
+/* admin thumbnails 
+------------------------------------------------------- */
+.admin_thumbnail {
+    float: left;
+    margin: 10px;
+    width: 100px;
+    height: 125px;
+}
+
+.admin_thumbnail a {
+    font-size: 80%;
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+.admin_thumbnail a:hover {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+/* admin right sidebar links
+--------------------------------------------------------*/
+#admin_links {
+    margin-bottom: 20px;
+}
+
+#admin_links a {
+    display: block;
+    background-color: #444444;
+    color: #eeeeee;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 150%;
+    padding: 5px 0 5px 5px;
+    margin: 1px 0 1px 0;
+}
+
+#admin_links a:hover {
+    text-decoration: none;
+    background-color: #394203;
+}
+
+/* manage categories 
+-------------------------------------------------------- */
+.manage_category table {
+    margin: 10px 0 0 0;
+}
+
+.manage_category tr {
+    margin: 0;
+}
+
+.manage_category th {
+    margin: 0 0 1px 0;
+    padding-left: 5px;
+    width: 100px;
+    text-align: left;
+    background-color: #333333;
+}
+
+.manage_category td {
+    margin: 0 0 1px 0;
+    padding: 0 0 0 3px;
+    width: 80px;
+    background-color: #444444;
+}
+
+.manage_category a {
+    text-decoration: none;
+    background-color: #444444;
+    color: #ffffff;
+}
+
+.manage_category a:hover {
+    background-color: #444444;
+    color: #333333;
+}
+
+
+
+/* forms
+--------------------------------------------------------*/
+#form {
+    color: #222222;
+    padding: 10px;
+}
+
+#form p {
+    line-height: 200%;
+}
+
+#form h1 {
+    margin-bottom: 20px;
+}
+
+p#loading {
+    background: url(../images/small_spinner.gif) no-repeat;
+    width: 15px;
+    height: 15px;
+}
+
+
+/* Inside redbox
+-------------------------------------------------------- */
+#picture_in_redbox {
+    float:left;
+    border: 2px solid #cccccc;
+}
+
+#picture_info {
+    text-align: right;
+    font-size: 0.8em;
+    color: #000000;
+    float: left;
+    background-color: #dddddd;
+    padding: 8px 8px 8px 15px;
+    margin-left: 15px;
+}
+
+#picture_info p {
+    padding: 5px;
+}
+
+.picture_title {
+   font-weight: bold;
+   font-style: italic;
+}
+
+#redbox_nav {
+    margin-top: 15px;
+}
+
+.prev {
+    text-align:left;
+    padding:5px;
+    width:125px;
+    display:block;
+    float:left;
+}
+
+.next {
+    text-align: right;
+    width:125px;
+    padding: 5px;
+    display:block;
+    float:left;
+}
+
+.close {
+    padding: 5px;
+    display:block;
+    float:left;
+    width:125px;
+    text-align:center;
+}
+
+#RB_window a {
+    text-decoration: none;
+    color: #444444;
+    font-weight: bold;
+    font-size: 1.0em;
+}
+
+/* Login
+-----------------------------------------------*/
+#login {
+    position: absolute;
+    top: 20px;
+    left: 200px;
+    padding: 10px;
+}
+
+#login p {
+    margin: 10px;
+}
+
+#login_logout {
+    float: left;
+    margin: 10px 0 0 700px;
+}
+
+#login_logout a {
+    color: #ffffff;
+}
+
+/* Upload picture
+-------------------------------------------- */
+#new_picture {
+    margin: 30px 0 0 200px;
+    color: #ffffff;
+}
+
+#new_picture td {
+    padding: 3px;
+}
+
+#new_picture td.label {
+    text-align: right;
+}
+
+#new_picture form {
+    margin: 0;
+}
+
+#new_picture a {
+    color: #cccccc;
+}
+
+#admin_show {
+    margin: 30px 0 0 200px;
+}
+
+
+
+

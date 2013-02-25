@@ -1,0 +1,5 @@
+page['spinner'].hide
+page['categories'].replace_html :partial => 'categories', :locals => { :categories => @categories }
+page['manage_categories'].replace_html :partial => 'admin/manage_categories',
+  :locals => { :categories => @categories }
+page['thumbnails'].replace_html :partial => 'admin/generic_thumbnail'

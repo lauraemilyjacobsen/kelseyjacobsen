@@ -1,0 +1,33 @@
+<div id="form">
+  <h1>Editing picture</h1>
+  
+  <% form_remote_for @picture, :method => :put,
+    :loading =>  "$('loading').show();" do |f| %>
+    <p>
+      <%= f.error_messages %>
+    </p>
+    <p>
+      Title: <%= f.text_field :title %>
+    </p>
+    <p>
+      Date: <%= f.text_field :date %>
+    </p>
+    <p>
+      Medium: <%= f.text_field :medium %>
+    </p>
+    <p>
+      Width (inches): <%= f.text_field :physical_width %>
+    </p>
+    <p>
+      Height (inches): <%= f.text_field :physical_height %>
+    </p>
+    <p>
+      Category: <%= f.collection_select(:category_id, Category.find(:all),
+        :id, :name) %>
+    </p>
+    <p><%= f.submit 'Update' %>
+    <img id="loading" src="../images/small_spinner.gif" style="display:none" /></p>
+  <% end %>
+  
+  <p><%= link_to_close_redbox "Cancel" %></p>
+</div>

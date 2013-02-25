@@ -1,0 +1,3 @@
+page["RB_window"].replace_html :partial => 'created', :locals => { :category => @category }
+page["categories"].replace_html :partial => 'categories', :locals => { :categories => @categories }
+page["manage_categories"].replace_html :partial => 'admin/manage_categories', :locals => { :categories => @categories }

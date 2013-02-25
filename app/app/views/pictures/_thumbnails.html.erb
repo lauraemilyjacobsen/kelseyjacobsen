@@ -1,0 +1,12 @@
+<% if pictures.empty? %>
+  <p>There are no pictures in this category.</p>
+<% else %>
+
+  <% for picture in pictures %>
+    <div class="thumbnail">
+      <%= link_to_remote_redbox image_tag(picture.public_filename(:medium)),
+        :url => picture_url(picture), :method => :get %><br />
+    <div class="clearer"></div>
+    </div>
+  <% end %>
+<% end %>

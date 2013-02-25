@@ -1,0 +1,5 @@
+<% for category in categories %> 
+        <%= link_to_remote "#{category.name}", :update => 'thumbnails',
+          :url => { :controller => 'admin', :action => 'show_category', :id => category.id },
+          :html => { :class => 'category' } %>
+   <% end %>

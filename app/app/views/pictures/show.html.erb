@@ -1,0 +1,23 @@
+<div id="picture_in_redbox">
+  <%= image_tag @picture.public_filename(:large) %>
+</div>
+
+<div id="picture_info">
+  <p class="picture_title"><%= @picture.title %></p>
+  
+  <p class="picture_label"><%= @picture.date %></p>
+  
+  <p class="picture_label"><%= @picture.medium %></p>
+ 
+  <p class="picture_label"><%= @picture.dimensions %></p>
+  
+</div>
+
+<div class="clearer"></div>
+
+<div id="redbox_nav">
+  <span class="prev"><%= link_to_previous(@picture) %></span>
+  <span class="close"><%= link_to_close_redbox "Close" %></span>
+  <span class="next"><%= link_to_next(@picture) %></span>
+</div>
+

@@ -1,0 +1,21 @@
+<div id="form">
+  <h1>Edit category</h1>
+  
+  <% form_remote_for @category, :method => :put, 
+    :url => { :controller => 'categories', :action => 'update', :id => @category.id },
+    :loading => "$('loading').show();" do |f| %>
+    <p>
+      <%= f.error_messages %>
+    </p>
+    <p>
+      Name: <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.submit 'Update' %>
+      <img id="loading" src="../images/small_spinner.gif" style="display:none;" />
+    </p>
+  <% end %>
+      
+  <p><%= link_to_close_redbox "Cancel" %></p>
+  
+</div>

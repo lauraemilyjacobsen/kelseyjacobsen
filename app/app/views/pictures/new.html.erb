@@ -1,0 +1,38 @@
+<div id="top_border"></div>
+
+<table id="new_picture"> 
+  <tr><td></td><th>Upload a picture</th></tr>
+  
+  <% form_for(@picture, :url => '/pictures/',
+    :html => { :multipart => true }) do |f| %>
+    
+    <tr><td colspan="2"><%=f.error_messages%></td></tr>
+    <tr>
+      <td class="label"> Title:</td><td> <%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td class="label">Date:</td> <td> <%= f.text_field :date %></td>
+    </tr>
+    <tr>
+      <td class="label">Medium:</td><td> <%= f.text_field :medium %></td>
+    </tr>
+    <tr>
+      <td class="label">Width (inches): </td><td><%= f.text_field :physical_width %></td>
+    </tr>
+    <tr>
+      <td class="label">Height (inches): </td><td><%= f.text_field :physical_height %></td>
+    </tr>
+    <tr>
+      <td class="label"> Category:</td><td> <%= f.collection_select(:category_id, Category.find(:all),
+        :id, :name) %></td>
+    </tr>
+    <tr> 
+      <td class="label">File to upload: </td>
+      <td> <%= f.file_field(:uploaded_data ) %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit "Upload picture" %> <% end %>
+        <%= button_to 'Cancel', admin_path %> </td>
+    </tr>
+</table>

@@ -1,0 +1,23 @@
+<% for category in categories %>
+    
+  <div class="manage_category">
+    <table>
+      <tr>
+        <th rowspan="2"><%= category.name %></th>
+        <td> 
+          <%= link_to_remote_redbox 'Rename', :method => :get, 
+            :url => { :controller => 'categories', :action => 'edit', :id => category.id } %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= link_to_remote 'Delete', :method => :delete,
+            :url => {:controller => 'categories', :action => 'destroy', :id => category.id },
+            :confirm => "Do you want to delete the category #{category.name} and all its contents?",
+            :loading => "$('spinner').show();" %>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+<% end %>

@@ -1,0 +1,19 @@
+<h1>New category</h1>
+  <% form_remote_for @category,
+    :url => { :controller => 'categories', :action => 'create' }, 
+    :loading => "$('loading').show();"  do  |f| %>
+    <p>
+      <%= f.error_messages %>
+    </p> 
+    <p>
+      <%= f.label :name %>:
+      <%= f.text_field :name, :size => 40 %>
+    </p>
+    <p>
+      <%= f.submit 'Create category', :class => 'submit' %>
+      <img id="loading" src="../images/small_spinner.gif" style="display:none" />
+    </p>
+  <% end %>
+  <p>
+    <%= link_to_close_redbox 'Cancel' %>
+  </p>

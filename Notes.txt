@@ -1,0 +1,4 @@
+Uses the gem RMagick 2.9.2, Ruby 1.8
+
+Database: Kelseyj_gallery
+kelseyj_user

@@ -1,0 +1,51 @@
+<div id="top_border"></div>
+
+<div id="login_logout">
+  <div id="logged_in">
+  <%  if session[:user_id] %>
+    You are logged in as <%= User.find(session[:user_id]).name %>. 
+    <%= link_to 'Log out', logout_path %>
+    &nbsp;<%= link_to 'Change password', edit_user_path(@user) %>
+  <% end %>
+</div>
+</div>
+
+<div id="main">
+  
+  <h1>Manage pictures</h1>
+  
+  <div id="categories">
+    <%= render :partial => 'categories/admin_categories', 
+      :locals => { :categories => @categories } %>
+  </div>
+  
+  <div id="thumbnails"> 
+    <%= render :partial => 'generic_thumbnail' %>
+  </div>
+</div>
+
+<div id="right_sidebar">
+  
+  <div id="admin_links">
+    <%= link_to 'The gallery', pictures_path %>
+    
+    
+    <%= link_to 'Upload a picture', new_picture_path %>
+    
+    
+    
+    <%= link_to_remote_redbox 'New category', 
+      :url => { :controller => 'categories', :action => 'new'} %>
+          
+  </div>
+  
+  <h3>
+    Manage categories
+  </h3>
+  
+  <div id="manage_categories">
+    <%= render :partial => 'manage_categories', :locals => { :categories => @categories } %>
+  </div>
+  
+  <div id="spinner" style="display:none"></div>
+</div>

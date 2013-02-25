@@ -1,0 +1,28 @@
+<div id="login">
+  <p><%= flash[:notice] %></p>
+  Update <%= link_to @user.name, edit_user_path(@user) %>'s password
+  
+  <% form_for(@user) do |f| %>
+    <fieldset>
+      <%= f.error_messages %>
+      <p>
+        <%= f.label :current_password, 'Current Password' %>:
+        <%= password_field_tag :current_password, :size => 40 %>
+      </p>
+      <p>
+        <%= f.label :user_password, 'New Password' %>:
+        <%= f.password_field :password, :size => 40 %>
+      </p>
+      <p>
+        <%= f.label :user_password_confirmation, 'Confirm new password' %>:
+        <%= f.password_field :password_confirmation, :size => 40 %>
+      </p>
+      <p>
+        <%= f.hidden_field :name %>
+      </p>
+      <p>
+        <%= f.submit "Update" %>
+      </p>
+    </fieldset>
+  <% end %>
+</div>

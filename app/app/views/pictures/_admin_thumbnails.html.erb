@@ -1,0 +1,22 @@
+<% if pictures.empty? %>
+  <p>There are no pictures in this category.</p>
+<% else %>
+
+  <% for picture in pictures %>
+    <div class="admin_thumbnail">
+      <%= link_to_remote_redbox image_tag(picture.public_filename(:medium)),
+        :url => picture_url(picture), :method => :get %><br />
+      <%= link_to_remote_redbox 'Edit',
+        :url => edit_picture_url(picture),
+        :method => :get %>
+      <%= link_to_remote 'Delete', 
+        :url => picture, 
+        :method => :delete,
+        :confirm => 'Do you want to permanently delete this picture?',
+        :update => 'thumbnails' %> <br />
+     <%= link_to_remote_redbox 'Front page',
+        :url => { :controller => 'pictures', :action => 'set_as_front_page',
+        :id => picture.id } %>
+    </div>
+  <% end %>
+<% end %>

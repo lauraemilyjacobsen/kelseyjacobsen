@@ -1,0 +1,1 @@
+page['RB_window'].replace_html :partial => 'show', :locals => { :picture => @picture }

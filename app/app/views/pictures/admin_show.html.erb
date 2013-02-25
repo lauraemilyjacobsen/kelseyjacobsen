@@ -1,0 +1,11 @@
+<div id="top_border"></div>
+
+<div id="admin_show">
+<p>You have uploaded this picture.</p>
+<p><%= link_to 'Back', :controller => 'admin' %></p>
+
+<%= image_tag @picture.public_filename(:large), :class => 'picture' %>
+<p><%= @picture.title %></p>
+<p><%= @picture.dimensions %></p>
+<p><%= @picture.medium %></p>
+</div>

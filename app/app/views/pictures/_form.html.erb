@@ -1,0 +1,30 @@
+<%= error_messages_for :picture %>
+
+<% form_for(@picture, :html => { :multipart => true }) do |f| %>
+  <p>
+    Title: <%= f.text_field :title %>
+  </p>
+  <p>
+    Date: <%= f.text_field :date %>
+  </p>
+  <p>
+    Medium: <%= f.text_field :medium %>
+  </p>
+  <p>
+    Width (inches): <%= f.text_field :physical_width %>
+  </p>
+  <p>
+    Height (inches): <%= f.text_field :physical_height %>
+  </p>
+  <p>
+    Category: <%= f.collection_select(:category_id, Category.find(:all),
+       :id, :name) %>
+  </p>
+  <p>  
+    File to upload: 
+    <%= f.file_field(:uploaded_data ) %>
+  </p>
+  <p>
+    <%= f.submit "Upload picture" %>
+  </p>
+<% end %>
